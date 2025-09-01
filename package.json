@@ -1,0 +1,27 @@
+{
+  "name": "user-profile-management-system",
+  "version": "1.0.0",
+  "description": "Role-based user profile management system with reusable packages",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "app"
+  ],
+  "scripts": {
+    "dev": "cd app && npm run dev",
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces",
+    "lint": "npm run lint --workspaces",
+    "install:all": "npm install && npm run install:workspaces",
+    "install:workspaces": "cd packages/user-profile-form && npm install && cd ../user-list && npm install && cd ../../app && npm install"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tslib": "^2.8.1",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}
